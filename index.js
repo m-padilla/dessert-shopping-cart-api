@@ -14,9 +14,10 @@ const app = express();
 
 // middleware to handle routes
 app.use(cors({
-  origin: "http://localhost:5173", // <-- frontend dev server
+  origin: "https://dessert-shopping-cart.onrender.com", // <-- frontend dev server
   methods: ["GET", "POST"],
-  credentials: true
+  credentials: true,
+  optionsSuccessStatus: 200
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -26,7 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', dessertRoute);
 
 app.listen(PORT || 3000, () => {
-  console.log(`Server is running on http://localhost:${PORT}/`)
+  console.log(`Server is running on Port:${PORT}/`)
 })
 
 mongoose.connect(MONGODB_URI)
