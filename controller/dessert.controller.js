@@ -1,7 +1,4 @@
 import Dessert from '../model/dessert.js';
-import { uploadAsset } from '../cloudinary.js';
-import data from '../data.json'  with { type: "json" };
-import dessert from '../model/dessert.js';
 
 async function getAllDesserts(req, res) {
     try {
